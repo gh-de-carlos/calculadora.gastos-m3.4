@@ -73,9 +73,19 @@ calcularDescuento()
 
 // mostramos descuento y ahora nos da 50.
 console.log(descuento)  //> 50
+
+/*
+
+Este es el único escenario que provoca colisiones entre nombres. Incluso si definimos ambas variables con `var` no hay colisión porque la segunda se mantiene dentro del alcance de la función mientras que la otra en el scope global. Tampoco si definimos una variable como propiedad del objeto `window` haciendo `descuento = 100` porque al declarar con `var` la siguiente dentro de la función, volverán a ser la primera `window.descuento = 100` y la segunda a estar circunscrita al contexto de `calcularDescuento() => descuento = 50`. 
+
+OBS: Hay un escenario que provoca un resultado similar y es declarar
+window.descuento = 100 y luego window.descuento = 50 pero no tiene sentido
+porque es una práctica ya no desaconsejada, sino abiertamente prohibida en JS.
+
+*/
 ```  
 
-    Este es el único escenario que provoca colisiones entre nombres. Incluso si definimos ambas variables con `var` no hay colisión porque la primera se mantiene dentro del alcance de la función mientras que la otra en el scope global. Pero tampoco si definimos una variable como propiedad del objeto `window` haciendo `descuento = 100` porque al declarar con `var` la siguiente dentro de la función, volverán a ser la primera `window.descuento = 100` y la segunda a estar circunscrita al contexto de `calcularDescuento() => descuento = 50`
+
 
 
 9. **Crear una función anidada** Crea una función llamada `gestionarFinanzas` que contenga dentro otra función llamada `imprimirResumen`. `gestionarFinanzas` debe calcular los gastos totales y el ahorro, y luego invocar la función `imprimirResumen` para mostrar un mensaje como: `"Tus gastos fueron de X y tu ahorro fue de Y."`
