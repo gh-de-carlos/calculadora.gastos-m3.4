@@ -55,8 +55,8 @@ debe calcular la suma total de los tres gastos y **retornar el resultado**.
     **NOTA**: Este ejercicio está muy mal planteado. Lo que se va a suponer, considerando que este es un ejercicio que trata mucho del scope es el siguiente escenario: 
 
 ```Js
-// se declara la variable descuento, global al script/window
-let descuento = 100;
+// se declara la variable descuento, "global" al objeto global: window
+var descuento = 100;
 
 // se define calcularDescuento() donde se sobreescribe descuento
 function calcularDescuento( ){ 
@@ -80,7 +80,6 @@ Este es el único escenario que provoca colisiones entre nombres. Incluso si def
 
 OBS: Hay un escenario que provoca un resultado similar y es declarar
 window.descuento = 100 y luego window.descuento = 50 pero no tiene sentido
-porque es una práctica ya no desaconsejada, sino abiertamente prohibida en JS.
 
 */
 ```  
